@@ -10,11 +10,11 @@ np.set_printoptions(precision=3, suppress=True)
 # Import the data file locally
 financials = pd.read_csv(r"data\financialsSimple.csv")
 
-#Separate relevant columns into Features and Labels
+# Separate relevant columns into Features and Labels
 financialsFeatures = np.array(financials[['Sale Price']])
 financialsLabels = np.array(financials[['Units Sold']])
 
-#Basic Tensorflow model definition
+# Basic Tensorflow model definition
 financialsModel = tf.keras.Sequential([
   layers.Dense(64, activation='relu'),
   layers.Dense(1)
